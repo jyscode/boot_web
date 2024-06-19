@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<p>Displaying a JavaScript object will output [object Object]:</p>
+
+<p id="demo"></p>
+
+<script>
+    // Create an Object
+    const person = {
+        name: "John",
+        age: 30,
+        city: "New York"
+    }
+
+    // Build a Text
+    let text = "";
+    for (let x in person) {
+        text += x + " " + person[x] + " ";
+    }
+
+    // Create an Array
+    const myArray = Object.values(person);
+
+
+    const fruits = {Bananas:300, Oranges:200, Apples:500};
+
+    let text2 = "";
+    // key, value
+    for (let [fruit, value] of Object.entries(fruits)) {
+        text2 += fruit + ": " + value + "<br>";
+    }
+
+    // Object to String
+    let myString = JSON.stringify(person);
+
+    // String to Object
+    let toObject = JSON.parse(myString)
+
+
+    // Display Object
+    document.getElementById("demo").innerHTML = person + "<br>" + person.name + "," + person.age + "," + person.city
+    + "<br>" + text +"<br>" + myArray + "<br>" + text2 + myString + "<br>" + toObject + toObject.name
+
+
+</script>
+
+</body>
+</html>
